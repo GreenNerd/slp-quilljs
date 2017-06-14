@@ -12,7 +12,7 @@ import Underline from 'quill/formats/underline';
 import Strike from 'quill/formats/strike';
 import Blockquote from 'quill/formats/blockquote';
 import ALink from 'quill/formats/link';
-import List from 'quill/formats/list';
+import List, { ListItem } from 'quill/formats/list';
 import { AlignClass, AlignStyle } from 'quill/formats/align';
 import { IndentClass as Indent } from 'quill/formats/indent';
 
@@ -42,6 +42,7 @@ Quill.register({
   'formats/blockquote': Blockquote,
   'formats/link': ALink,
   'formats/list': List,
+  'formats/list/item': ListItem,
   'formats/align': AlignClass,
   'formats/indent': Indent
 });
