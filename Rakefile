@@ -1,5 +1,4 @@
 require 'bundler/gem_tasks'
-task default: :spec
 
 task :compile do
   sh 'npm install'
@@ -7,4 +6,9 @@ task :compile do
 
   puts '=' * 30
   puts 'Assets just built!'
+
+  sh 'git add .'
+  sh 'gem bump'
 end
+
+task default: :compile
