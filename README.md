@@ -13,6 +13,12 @@ npm run build
 rake compile
 ```
 
+#### Install
+```coffeescript
+# application.coffee
+#= require quill
+```
+
 
 ### License
 
