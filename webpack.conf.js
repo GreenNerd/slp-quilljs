@@ -4,8 +4,8 @@ var webpack = require('webpack');
 module.exports = {
   entry: "./app.js",
   output: {
-    path: __dirname + "/dist",
-    filename: "bundle.js"
+    path: __dirname + "/vendor/assets/javascripts/",
+    filename: "quill.js"
   },
   resolve: {
     alias: {
