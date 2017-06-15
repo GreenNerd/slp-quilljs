@@ -1,10 +1,16 @@
-# Quill Webpack Example
+# Quill asset for slp
 
-A working example of building Quill and Parchment as part of a larger application build pipeline using Webpack. See [Adding Quill to Your Build Pipeline](https://quilljs.com/guides/adding-quill-to-your-build-pipeline) for a detailed guide.
 
+### Build
+#### Develop assets
 ```bash
 npm install
 npm run build
+```
+
+#### Compile assets for Rails
+```bash
+rake compile
 ```
 
 
