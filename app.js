@@ -1,7 +1,7 @@
 import Quill from 'quill/core';
 
 import Toolbar from 'quill/modules/toolbar';
-import Snow from 'quill/themes/snow';
+import Slp from './themes/slp';
 
 import { SizeClass, SizeStyle } from 'quill/formats/size';
 import { ColorClass, ColorStyle } from 'quill/formats/color';
@@ -31,7 +31,7 @@ Quill.register({
 
 Quill.register({
   'modules/toolbar': Toolbar,
-  'themes/snow': Snow,
+  'themes/slp': Slp,
   'formats/size': SizeClass,
   'formats/color': ColorStyle,
   'formats/background': BackgroundStyle,
