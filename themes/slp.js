@@ -38,7 +38,7 @@ class SlpTheme extends Theme {
   }
 
   extendToolbar(toolbar) {
-    toolbar.container.classList.add('ql-snow');
+    toolbar.container.classList.add('ql-slp');
     this.buildButtons([].slice.call(toolbar.container.querySelectorAll('button')));
     this.buildPickers([].slice.call(toolbar.container.querySelectorAll('select')));
     if (toolbar.container.querySelector('.ql-link')) {
