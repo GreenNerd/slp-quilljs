@@ -4,6 +4,7 @@ import Picker from '../ui/picker';
 class SlpTheme extends Theme {
   constructor(quill, options) {
     super(quill, options);
+    this.quill.container.classList.add('ql-slp');
   }
 
   addModule(name) {
@@ -14,7 +15,21 @@ class SlpTheme extends Theme {
     return module;
   }
 
-  buildButtons(buttons) {}
+  buildButton(button) {
+    let className = button.classList;
+    const prefix = 'ql-';
+    [].forEach.call(button.classList, (name)=>{
+      if (!name.startsWith(prefix)) return;
+      name = name.slice(prefix.length);
+      button.innerHTML = '<i class="slp-' + name + '"></i>';
+    });
+  }
+
+  buildButtons(buttons) {
+    buttons.forEach((button) => {
+      this.buildButton(button);
+    });
+  }
 
   buildPickers(selects) {
     this.pickers = selects.map((select) => {
