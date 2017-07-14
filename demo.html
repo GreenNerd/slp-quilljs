@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="./vendor/assets/javascripts/quill.js"></script>
+</head>
+<body>
+  <div id="demo"></div>
+  <script>
+    new Quill('#demo', {
+      debug: 'info',
+      modules: {
+        toolbar: [
+          ['bold'],
+          [
+            {
+              color: [false, 'red', 'blue', 'green']
+            },
+            {
+              background: [false, 'red', 'blue', 'green']
+            }
+          ],
+          [
+            {
+              align: ['left', 'center', 'right', 'justify']
+            }
+          ]
+        ]
+      },
+      theme: 'slp',
+      placeholder: '请输入'
+    });
+  </script>
+</body>
+</html>
