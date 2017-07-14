@@ -8,6 +8,16 @@ class Picker extends QLPicker {
     this.container.appendChild(label);
     return label;
   }
+
+  buildItem(option) {
+    let item = super.buildItem(option);
+    let value = option.getAttribute('value') || '默认';
+    item.innerHTML = value;
+    if (value != '默认') {
+      item.classList.add(this.select.className + '-' + option.getAttribute('value'));
+    }
+    return item;
+  }
 }
 
 export default Picker;

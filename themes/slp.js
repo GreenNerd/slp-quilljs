@@ -1,5 +1,6 @@
 import Theme from 'quill/core/theme';
 import Picker from '../ui/picker';
+import ColorPicker from '../ui/ColorPicker';
 
 class SlpTheme extends Theme {
   constructor(quill, options) {
@@ -16,7 +17,6 @@ class SlpTheme extends Theme {
   }
 
   buildButton(button) {
-    let className = button.classList;
     const prefix = 'ql-';
     [].forEach.call(button.classList, (name)=>{
       if (!name.startsWith(prefix)) return;
@@ -32,8 +32,14 @@ class SlpTheme extends Theme {
   }
 
   buildPickers(selects) {
+    const prefix = 'ql-';
     this.pickers = selects.map((select) => {
-      return new Picker(select);
+      let term = select.className.slice(prefix.length);
+      if (term === 'color' || term === 'background') {
+        return new ColorPicker(select);
+      } else {
+        return new Picker(select);
+      }
     });
   }
 
