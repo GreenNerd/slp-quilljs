@@ -22,10 +22,21 @@ class Picker extends QLPicker {
 
   buildItem(option) {
     let item = super.buildItem(option);
-    let value = option.getAttribute('value') || '默认';
-    item.innerHTML = value;
-    if (value != '默认') {
-      item.classList.add(this.select.className + '-' + option.getAttribute('value'));
+    let term = this.select.className.slice('ql-'.length);
+    let value = option.getAttribute('value');
+    switch(term) {
+      case 'header':
+        if (value) {
+          item.innerHTML = `标题${value}`;
+        } else {
+          item.innerHTML = '默认'
+        }
+        break;
+      case 'align':
+        if (value) {
+          item.classList.add(this.select.className + '-' + value);
+        }
+        break;
     }
     return item;
   }
