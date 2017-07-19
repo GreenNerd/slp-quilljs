@@ -1,6 +1,17 @@
 import QLPicker from 'quill/ui/picker';
 
 class Picker extends QLPicker {
+  constructor(select) {
+    super(select);
+    document.body.addEventListener('click', (event)=>{
+      if (this.container.contains(event.target)) {
+        return;
+      } else {
+        this.close();
+      }
+    }, true);
+  }
+
   buildLabel() {
     let label = document.createElement('span');
     label.classList.add('ql-picker-label');
