@@ -3,9 +3,12 @@ import QLPicker from 'quill/ui/picker';
 class Picker extends QLPicker {
   constructor(select) {
     super(select);
-    document.body.addEventListener('click', (event)=>{
+    document.body.addEventListener('mousedown', (event)=>{
+      if ([].indexOf.call(this.container.classList, 'ql-expanded') === -1) {
+        return true;
+      }
       if (this.container.contains(event.target)) {
-        return;
+        return true;
       } else {
         this.close();
       }
@@ -29,7 +32,7 @@ class Picker extends QLPicker {
         if (value) {
           item.innerHTML = `标题${value}`;
         } else {
-          item.innerHTML = '默认'
+          item.innerHTML = '默认';
         }
         break;
       case 'align':

@@ -3,9 +3,12 @@ import Picker from 'quill/ui/picker';
 class ColorPicker extends Picker {
   constructor(select) {
     super(select);
-    document.body.addEventListener('click', (event)=>{
+    document.body.addEventListener('mousedown', (event)=>{
+      if ([].indexOf.call(this.container.classList, 'ql-expanded') === -1) {
+        return true;
+      }
       if (this.container.contains(event.target)) {
-        return;
+        return true;
       } else {
         this.close();
       }
