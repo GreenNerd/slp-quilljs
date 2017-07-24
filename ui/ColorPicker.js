@@ -25,10 +25,7 @@ class ColorPicker extends Picker {
 
   buildItem(option) {
     let item = super.buildItem(option);
-    let term = this.select.className.slice('ql-'.length);
-    let default_color = term === 'color' ? '#313131' : 'transparent';
-    let color = option.getAttribute('value') || default_color;
-    item.style.backgroundColor = color;
+    item.style.backgroundColor = option.getAttribute('value');
     return item;
   }
 }

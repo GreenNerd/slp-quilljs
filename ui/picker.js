@@ -24,9 +24,21 @@ class Picker extends QLPicker {
   }
 
   buildItem(option) {
-    let item = super.buildItem(option);
     let term = this.select.className.slice('ql-'.length);
     let value = option.getAttribute('value');
+    let tag = (term === 'header' && value) ? `h${ value }` : 'span'
+    let item = document.createElement(tag);
+
+    item.classList.add('ql-picker-item');
+    if (option.hasAttribute('value')) {
+      item.setAttribute('data-value', option.getAttribute('value'));
+    }
+    if (option.textContent) {
+      item.setAttribute('data-label', option.textContent);
+    }
+    item.addEventListener('click', () => {
+      this.selectItem(item, true);
+    });
     switch(term) {
       case 'header':
         if (value) {
