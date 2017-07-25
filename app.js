@@ -15,7 +15,7 @@ import ALink from 'quill/formats/link';
 import List, { ListItem } from 'quill/formats/list';
 import { AlignClass, AlignStyle } from 'quill/formats/align';
 import { IndentClass as Indent } from 'quill/formats/indent';
-
+import Img from 'quill/formats/image';
 
 Quill.register({
   'attributors/class/align': AlignClass,
@@ -42,6 +42,7 @@ Quill.register({
   'formats/header': Header,
   'formats/list/item': ListItem,
   'formats/align': AlignClass,
+  'formats/image': Img,
   'formats/indent': Indent
 });
 
